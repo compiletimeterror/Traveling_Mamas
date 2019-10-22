@@ -1,0 +1,297 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tour Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:description" content="" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+    <!-- <style>
+        q.solid {border-style: solid;}
+        center{border:1px solid red;}
+    </style> -->
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <!-- Flexslider  -->
+    <link rel="stylesheet" href="{% static 'css/flexslider.css' %}">
+
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <!-- Flaticons  -->
+    <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/kashmir.css' %}">
+
+    <!-- Modernizr JS -->
+    <script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+    <script src="{% static 'js/respond.min.js' %}"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+	
+	<![endif]-->
+
+
+</head>
+
+<body>
+
+    <div class="colorlib-loader"></div>
+
+    <div id="page">
+        <nav class="colorlib-nav" role="navigation">
+            <div class="top-menu">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <div id="colorlib-logo"><a href="home">TRAVELING MAMAS</a></div>
+                        </div>
+                        <div class="col-xs-10 text-right menu-1">
+                            <ul>
+                                <li><a href="home">Home</a></li>
+                                {% comment %} <li class="has-dropdown active">
+                                    <a href="tours">Tours</a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">Destination</a></li>
+                                        <li><a href="#">Cruises</a></li>
+                                        <li><a href="#">Hotels</a></li>
+                                        <li><a href="#">Booking</a></li>
+                                    </ul>
+                                </li> {% endcomment %}
+                                <li><a href="tours">Destination</a></li>
+								<li><a href="flights">Flights</a></li>
+                                <li><a href="hotels">Hotels</a></li>
+                                <li><a href="services">Services</a></li>
+                                <li><a href="blog">Blog</a></li>
+                                <li><a href="about">About</a></li>
+                                <li><a href="contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <aside id="colorlib-hero">
+            <div class="flexslider">
+                <ul class="slides">
+                    <li style="background-image: url({% static 'images/ooty_main.webp' %});">
+                        <div class="overlay"></div>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
+                                    <div class="slider-text-inner text-center">
+                                        <h2>by Rishi Sharma & Rahul Kumar</h2>
+                                        <h1>Explore The Beauty Of Ooty.</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Here onwards writing about srinigar..!  -->
+       
+
+        
+        <centre>
+            <body style="background-color:mintcream;">
+            <h3>
+                <p align="left">
+                    <i>The Blue Mountains have always been shrouded in mysticism, and Ooty is no exception to that. For every mountain lover, the very idea of travelling to the city known as the Queen of the Hills holds an allure like no other. Once regarded as the summer headquarters of the East India Company (and for a very good reason), Ooty, also known as Udagamandalam, is a hill station in Tamil Nadu which serves as a very popular tourist destination for anyone looking for a picturesque place to relax and unwind. Ooty is nestled amidst the Nilgiri hills at an altitude of 2,240 meters above sea level and enjoys a favourable climate all year round. </i>
+                </p>
+                <p align="left"> 
+                    <i>Ooty oozes simplicity, devoid of any boundaries, so anyone who visits the place can feel at one with the local culture. The journey to Ooty itself is dotted with magnificent sights of the awe-inspiring Nilgiri hills, tea gardens, and serene waterfalls. The cool, peaceful landscape of Ooty is almost movie-like – winding country lanes that you can spend hours simply walking on, and the charm of old-world colonial architecture infuses fresh air into the souls of travellers. For anyone looking for a respite from the mind-boggling humidity and the scorching Indian sun, Ooty is the place to be.</i>
+                </p>
+                <p align="left">
+                        <i>Ooty is a very popular destination for couples and honeymooners, and there's no better way to fully take in all that this city has to offer than to take a trip on the Toy Train, which lets you enjoy panoramic views of this beautiful hill station right from your seat. The whole city is tinged with beautiful hues of green, with oases of sparkling blue waterfalls popping up here and there. The Nilgiri Mountain Railways has the steepest track in all of Asia, and it is one of the best train rides you will ever have the chance of experiencing. Remember the hit song 'Chaiyya Chaiyya' where Shahrukh Khan and Malaika Arora were seen matching steps on top of a train? Remember the breathtaking locales as the train chugged its way across lush greenery? Yes, that was the Nilgiri Mountain Railways, and the Nilgiri Mountains all along.
+
+                        Heavy snowfall affects the connectivity of Nainital during the winter months of December to February. Communal tensions also lead to frequent curfews in parts of the city. Make sure to check the situation before visiting.</i>
+                </p>
+                <p align="left">
+                        <i>As every traveller who has ever gone to Ooty knows, once you're in the city, a visit to the famous Doddabetta Peak is a must. Standing tall at 8,606 feet as the highest point of South India, the Dodabetta Peak trail is flanked by towering Eucaplytus trees, offering you uninterrupted views of the luxuriant valley.
+                        </i>
+                </p>
+                <p align="left">
+                    <b> PLACES TO VISIT:</b>
+                </p>
+                <p align="left">
+                        <b>NILGIRI MOUNTAIN RAILWAY:</b>- <i>The Nainital Dal Lake which has the length of 8 Km long and a width of 4 Km, spreads over a total of 26 Sq. Km. The fascinating Dal Lake is divided into two smaller ones the Lokut (small) and Bod (big) Dal. The south western part of the lake has a maximum depth of approximately 12 M. the Dal Lake gets some of its water from spring but is also supplemented by water from the mountain lake, Mar Sar. In the western part of the Lake one can glimpse a few islands, some bigger, some smaller. Its shores are very fertile and surrounded by willows.</i>
+                </p>
+                <p align="text-center">
+                        <b>OOTY LAKE:</b> - <i> Gardens, as the name suggests, built in the Mughal period is a marvel located in Srinagar. These gardens are the major attractions of the tourists to Jammu and Kashmir. These gardens are the nice example of the Mughal style of constructing attractive places.<br>
+                        The name Mughal Gardens is given for the combination of three renowned gardens namely the Nishat Bagh, Shalimar Gardens and Chashmashahi. These gardens are tourists' paradise and are beautifully decorated with bright flowerbeds, terraced lawns and well maintained cascading fountains. No tourist can miss these three nice marvelous gardens</i>
+                </p>
+                <p align="left">
+                        <b>OOTY ROSE GARDEN:</b> - <i>Wular Lake is about 16 km long and 10 km wide, spreading over an area of about 125 sq. km. Wular acts as a natural flood reservoir, drawing off excess water from the Jhelum River, which leaves the lake at Sopore. The lake changes character with every few miles of its course.<br>Being devoid of any artificial feature, Wular Lake is home to an enchanting variety of avian life. The extensive marshes surrounding the lake support dense coniferous forests, alpine pastures and orchards, adding to the natural splendor and biodiversity of the wetland area. The lake serves as a wintering site for several migratory waterfowl species like Little Egzet, Cattle Egzet, Shoveler, Common Pochard, and Mallard, to name a few.</i>
+                </p>
+                <p align="left">
+                        <b>OOTY BOTANICAL GARDEN:</b> - <i>The Hazratbal shrine lies at a distance of 25 kilometers from the Badgam district in Srinagar, Kashmir. This pilgrimage destination is known by a number of names viz. the Assar-e-Sharif, Madinat-us-Sani and the Dargah Sharif. Mughal emperor Shahjahan's brother constructed the Ishrat Mahal at the site of the shrine sometime in the year 1623, later when the emperor himself visited the site he ordered the place to be converted into a prayer house. The shrine as such was built by the Muslim Auqaf trust. Before the Hazratbal shrine was constructed the sacred hair was placed in the shrine of Naqshband Sahib. The architecture of the shrine is a combination of Mughal and traditional Kashmiri.</i>
+                </p>
+            </h3>
+        </body>
+        </centre>
+    
+
+        <div id="colorlib-subscribe" style="background-image: url({% static 'images/img_bg_2.jpg' %});" data-stellar-background-ratio="0.5">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 text-center colorlib-heading animate-box">
+                        <h2>Sign Up for a Newsletter</h2>
+                        <p>Sign up for our mailing list to get latest updates and offers.</p>
+                        <form class="form-inline qbstp-header-subscribe">
+                            <div class="row">
+                                <div class="col-md-12 col-md-offset-0">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="email" placeholder="Enter your email">
+                                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer id="colorlib-footer" role="contentinfo">
+            <div class="container">
+                <div class="row row-pb-md">
+                    <div class="col-md-3 colorlib-widget">
+                        <h4>Tour Agency</h4>
+                        <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+                        <p>
+                            <ul class="colorlib-social-icons">
+                                <li><a href="#"><i class="icon-twitter"></i></a></li>
+                                <li><a href="#"><i class="icon-facebook"></i></a></li>
+                                <li><a href="#"><i class="icon-linkedin"></i></a></li>
+                                <li><a href="#"><i class="icon-dribbble"></i></a></li>
+                            </ul>
+                        </p>
+                    </div>
+                    <div class="col-md-2 colorlib-widget">
+                        <h4>Book Now</h4>
+                        <p>
+                            <ul class="colorlib-footer-links">
+                                <li><a href="#">Flight</a></li>
+                                <li><a href="#">Hotels</a></li>
+                                <li><a href="#">Tour</a></li>
+                                <li><a href="#">Car Rent</a></li>
+                                <li><a href="#">Beach &amp; Resorts</a></li>
+                                <li><a href="#">Cruises</a></li>
+                            </ul>
+                        </p>
+                    </div>
+                    <div class="col-md-2 colorlib-widget">
+                        <h4>Top Deals</h4>
+                        <p>
+                            <ul class="colorlib-footer-links">
+                                <li><a href="#">Edina Hotel</a></li>
+                                <li><a href="#">Quality Suites</a></li>
+                                <li><a href="#">The Hotel Zephyr</a></li>
+                                <li><a href="#">Da Vinci Villa</a></li>
+                                <li><a href="#">Hotel Epikk</a></li>
+                            </ul>
+                        </p>
+                    </div>
+                    <div class="col-md-2">
+                        <h4>Blog Post</h4>
+                        <ul class="colorlib-footer-links">
+                            <li><a href="#">The Ultimate Packing List For Female Travelers</a></li>
+                            <li><a href="#">How These 5 People Found The Path to Their Dream Trip</a></li>
+                            <li><a href="#">A Definitive Guide to the Best Dining and Drinking Venues in the City</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3 col-md-push-1">
+                        <h4>Contact Information</h4>
+                        <ul class="colorlib-footer-links">
+							<li>291 South 21th Street, <br> Suite 721 New York NY 10016</li>
+							<li><a href="tel://94075 25943">+ 91 94075 25943</a></li>
+							<li><a href="mailto:rishi94075@gmail.com">rishi94075@gmail.com</a></li>
+							<li><a href="http://github.com/kampaitees">github.com/kampaitees</a></li>
+						</ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p>
+                           
+                            Copyright &copy;
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script> All rights reserved | This template is made with <i class="icon-heart2" aria-hidden="true"></i> by <a href="https://github.com/kampaitees" target="_blank">Rishi Sharma & Rahul Kumar</a>
+                           
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div class="gototop js-top">
+        <a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+    </div>
+
+    <!-- jQuery -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <!-- jQuery Easing -->
+    <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+    <!-- Bootstrap -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- Waypoints -->
+    <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+    <!-- Flexslider -->
+    <script src="{% static 'js/jquery.flexslider-min.js' %}"></script>
+    <!-- Owl carousel -->
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <!-- Magnific Popup -->
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/magnific-popup-options.js' %}"></script>
+    <!-- Date Picker -->
+    <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+    <!-- Stellar Parallax -->
+    <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+
+    <!-- Main -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>
