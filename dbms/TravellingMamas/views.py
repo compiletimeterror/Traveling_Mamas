@@ -89,3 +89,6 @@ def two(request):
 
 def hotel_booking(request):
     return render(request, 'hotel_booking.html')
+
+def flight(request):
+    return render(request, 'flight.html')
