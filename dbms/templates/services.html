@@ -73,22 +73,27 @@
                         <div class="col-xs-10 text-right menu-1">
                             <ul>
                                 <li><a href="home">Home</a></li>
-                                {% comment %} <li class="has-dropdown">
-                                    <a href="tours">Tours</a>
-                                    <ul class="dropdown">
-                                        <li><a href="#">Destination</a></li>
-                                        <li><a href="#">Cruises</a></li>
-                                        <li><a href="#">Hotels</a></li>
-                                        <li><a href="#">Booking</a></li>
-                                    </ul>
-                                </li> {% endcomment %}
                                 <li><a href="tours">Destination</a></li>
-								<li><a href="flights">Flights</a></li>
+								<li><a href="flight_search">Flights</a></li>
                                 <li><a href="hotels">Hotels</a></li>
                                 <li class="active"><a href="services">Services</a></li>
                                 <li><a href="blog">Blog</a></li>
                                 <li><a href="about">About</a></li>
                                 <li><a href="contact">Contact</a></li>
+                                {% if user.is_authenticated %}
+								
+								<li><a href="logout">Logout</a></li>
+								<p>				i</p>
+								<p>				i</p>
+								<p>				i</p>
+								<p>				i</p>
+								<p>				i</p>
+								<p>				i</p>
+								<p>				i</p>
+								<p ><h1 style = "color:white;text-align:center;	margin-left : -20%">Hello, {{user.first_name}}</h1></p>
+								{% else %}
+								<li><a href="register">Register/Login</a></li>
+								{% endif %}
                             </ul>
                         </div>
                     </div>
@@ -158,52 +163,53 @@
             </div>
         </div>
 
-        <div id="colorlib-testimony" class="colorlib-light-grey">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3 text-center colorlib-heading animate-box">
-                        <h2>Our Satisfied Guests says</h2>
-                        <p>We love to tell our successful far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2 animate-box">
-                        <div class="owl-carousel2">
-                            <div class="item">
-                                <div class="testimony text-center">
-                                    <span class="img-user" style="background-image: url({% static 'images/persons3.jpg' %});"></span>
-                                    <span class="user">Vinnakota Saran Chaitanya</span>
-                                    <small>Karnataka, India</small>
-                                    <blockquote>
-                                        <p>" A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                                    </blockquote>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="testimony text-center">
-                                    <span class="img-user" style="background-image: url({% static 'images/personss.jpeg' %});"></span>
-                                    <span class="user">Rahul Kumar</span>
-                                    <small>Bihar, India</small>
-                                    <blockquote>
-                                        <p>One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-                                    </blockquote>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="testimony text-center">
-                                    <span class="img-user" style="background-image: url({% static 'images/persons2.jpeg' %});"></span>
-                                    <span class="user">Rishi Sharma</span>
-                                    <small>Madhya Pradesh</small>
-                                    <blockquote>
-                                        <p>Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
-                                    </blockquote>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
+		<div id="colorlib-testimony" class="colorlib-light-grey">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3 text-center colorlib-heading animate-box">
+						<h2>Our Satisfied Guests says</h2>
+						<p>We love to tell our successful far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 animate-box">						
+						<div class="owl-carousel2">
+							<div class="item">
+								<div class="testimony text-center">
+									<span class="img-user" style="background-image: url({% static 'images/persons3.jpg' %});"></span>
+									<span class="user">Vinnakota Saran Chaitanya</span>
+									<small>Karnataka, India</small>
+									<blockquote>
+										<p>" A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+									</blockquote>
+								</div>
+							</div>
+							<div class="item">
+								<div class="testimony text-center">
+									<span class="img-user" style="background-image: url({% static 'images/personss.jpeg' %});"></span>
+									<span class="user">Rahul Kumar</span>
+									<small>Bihar, India</small>
+									<blockquote>
+										<p>One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+									</blockquote>
+								</div>
+							</div>
+							<div class="item">
+								<div class="testimony text-center">
+									<span class="img-user" style="background-image: url({% static 'images/persons2.jpeg' %});"></span>
+									<span class="user">Rishi Sharma</span>
+									<small>Madhya Pradesh, India</small>
+									<blockquote>
+										<p>Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
+									</blockquote>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</div>
+		</div>
 
 
         <div id="colorlib-subscribe" style="background-image: url({% static 'images/img_bg_2.jpg' %});" data-stellar-background-ratio="0.5">
@@ -218,7 +224,7 @@
                                 <div class="col-md-12 col-md-offset-0">
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="email" placeholder="Enter your email">
-                                        <button type="submit" style = "color:black" class="btn btn-primary">Subscribe</button>
+                                        <button type="submit" class="btn btn-primary">Subscribe</button>
                                     </div>
                                 </div>
                             </div>
@@ -228,7 +234,7 @@
             </div>
         </div>
 
-        <footer id="colorlib-footer" role="contentinfo">
+       <footer id="colorlib-footer" role="contentinfo">
 			<div class="container">
 				<div class="row row-pb-md">
 					<div class="col-md-3 colorlib-widget">
@@ -248,7 +254,7 @@
 						<h4>Book Now</h4>
 						<p>
 							<ul class="colorlib-footer-links">
-								<li><a href="flights">Flight</a></li>
+								<li><a href="flight_search">Flight</a></li>
 								<li><a href="hotels">Hotels</a></li>
 								<li><a href="tours">Tour</a></li>
 								<li><a href="hotels">Resorts</a></li>
@@ -299,7 +305,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			</div>
 		</footer>
 	</div>
-
 
     <div class="gototop js-top">
         <a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>

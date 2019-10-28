@@ -72,22 +72,29 @@
                         <div class="col-xs-10 text-right menu-1">
                             <ul>
                                 <li><a href="home">Home</a></li>
-                                <li class="has-dropdown">
-                                    {% comment %} <a href="tours">Tours</a>
-                                    <ul class="dropdown">
-                                        <li><a href="#">Destination</a></li>
-                                        <li><a href="#">Cruises</a></li>
-                                        <li><a href="#">Hotels</a></li>
-                                        <li><a href="#">Booking</a></li>
-                                    </ul>
-                                </li> {% endcomment %}
+                                
                                 <li><a href="hotels">Destination</a></li>
-								<li><a href="hotels">Flights</a></li>
+								<li><a href="flight_search">Flights</a></li>
                                 <li><a href="hotels">Hotels</a></li>
                                 <li><a href="services">Services</a></li>
                                 <li class="active"><a href="blog">Blog</a></li>
                                 <li><a href="about">About</a></li>
                                 <li><a href="contact">Contact</a></li>
+                                {% if user.is_authenticated %}
+								
+								<li><a href="logout">Logout</a></li>
+								<p>				i</p>
+								<p>				i</p>
+								<p>				i</p>
+								<p>				i</p>
+								<p>				i</p>
+								<p>				i</p>
+								<p>				i</p>
+								<p ><h1 style = "color:white;text-align:center;	margin-left : -20%">Hello, {{user.first_name}}</h1></p>
+								{% else %}
+								<li><a href="register">Register/Login</a></li>
+								{% endif %}
+
                             </ul>
                         </div>
                     </div>
@@ -247,7 +254,7 @@
                                 <div class="col-md-12 col-md-offset-0">
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="email" placeholder="Enter your email">
-                                        <button type="submit" style = "color:black" class="btn btn-primary">Subscribe</button>
+                                        <button type="submit" class="btn btn-primary">Subscribe</button>
                                     </div>
                                 </div>
                             </div>
@@ -257,7 +264,7 @@
             </div>
         </div>
 
-        <footer id="colorlib-footer" role="contentinfo">
+       <footer id="colorlib-footer" role="contentinfo">
 			<div class="container">
 				<div class="row row-pb-md">
 					<div class="col-md-3 colorlib-widget">
@@ -277,7 +284,7 @@
 						<h4>Book Now</h4>
 						<p>
 							<ul class="colorlib-footer-links">
-								<li><a href="flights">Flight</a></li>
+								<li><a href="flight_search">Flight</a></li>
 								<li><a href="hotels">Hotels</a></li>
 								<li><a href="tours">Tour</a></li>
 								<li><a href="hotels">Resorts</a></li>
@@ -328,7 +335,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			</div>
 		</footer>
 	</div>
-
 
     <div class="gototop js-top">
         <a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>

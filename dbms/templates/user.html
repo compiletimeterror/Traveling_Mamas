@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="grid-75">
+    <h1>Welcome!</h1>
+    {% comment %} {% if not user.is_authenticated %} {% endcomment %}
+    <p>Sign in to view your awesome profile or sign up to create one.</p>
+    {% comment %} {% else  %} {% endcomment %}
+    <p>There's not nothing to see here! You might want to go to your profile.</p>
+
+    <ul id="menu">
+        <a href="profile"><li>Profile</li></a>
+        <a href="edit_profile"><li>Edit_Profile</li></a>
+        <a href="change_password"><li>Change Password</li></a>
+    </ul>
+    {% comment %} {% endif %} {% endcomment %}
+
+</div>
+{% endblock %}

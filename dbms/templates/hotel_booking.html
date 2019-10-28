@@ -16,42 +16,46 @@
 <link href="{% static 'css/style_hotel_booking.css' %}" rel='stylesheet' type='text/css' />
 <!-- //Stylesheet -->
 <!--fonts--> 
-<link href="{% static '//fonts.googleapis.com/css?family=Roboto:300,400,500,700' %}" rel="stylesheet">
-<link href="{% static '//fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister' %}" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet">
 <!--//fonts--> 
+
+
 </head>
 <body>
 <!--background-->
+
 <h1> Book Here</h1>
     <div class="bg-agile">
 	<div class="book-appointment">
 	{% comment %} <h2>Booking Now</h2> {% endcomment %}
 						<div class="book-form agileits-login">
-							<form action="#" method="post">
+							<form action="hotel_booking" method="post" >
+								{% csrf_token %}
 								<div class="agileits_reservation_grid">
-								<div class="phone_email">
+								 <div class="phone_email">
 									<div class="form-text">
 										<i class="fa fa-user" aria-hidden="true"></i>
-										<input type="text" name="Name" placeholder="First name" required="">
+										<input autocomplete="off" type="text" name="first_name" placeholder="First name" required="">
 									</div> 
 								</div>
 								<div class="phone_email phone_email1">
 									<div class="form-text">
 										<i class="fa fa-user" aria-hidden="true"></i>
-										<input type="text" name="Name" placeholder="Last name" required="">
+										<input autocomplete="off" type="text" name="last_name" placeholder="Last name" required="">
 									</div>
 								</div>
 								
 								<div class="phone_email">
 									<div class="form-text">
 										<i class="fa fa-phone" aria-hidden="true"></i>
-										<input type="text" name="Phone no" placeholder="Phone number" required="">
+										<input autocomplete="off" type="text" name="number" placeholder="Phone number" required="">
 									</div> 
 								</div> 
 								<div class="phone_email phone_email1">
 									<div class="form-text">
 										<i class="fa fa-envelope-o" aria-hidden="true"></i>
-										<input type="email" name="email" placeholder="Email" required="">
+										<input autocomplete="off" type="email" name="email" placeholder="Email" required="">
 									</div>
 								</div>
 									
@@ -59,14 +63,14 @@
 									<div class="span1_of_1 phone_email1">
 										<div class="book_date"> 
 											<i class="fa fa-calendar" aria-hidden="true"></i>
-												<input  id="datepicker" name="Text" type="text" value="" placeholder="Check-out"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" required="">
+												<input autocomplete="off" id="datepicker" name="out" type="text" value="" placeholder="Check-out"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" required="">
 
 										</div>					
 									</div>
 									<div class="span1_of_1 phone_email">
 										<div class="book_date"> 
 											<i class="fa fa-calendar" aria-hidden="true"></i>
-												<input  id="datepicker1" name="Text" type="text" value="" placeholder="Check-in"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" required="">
+												<input autocomplete="off" id="datepicker1" name="in" type="text" value="" placeholder="Check-in"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" required="">
 
 										</div>					
 									</div>
@@ -74,32 +78,14 @@
 										<!-- start_section_room -->
 										<div class="section_room">
 											<i class="fa fa-users" aria-hidden="true"></i>
-											<select id="country" onchange="change_country(this.value)" class="frm-field required">
-												<option value="">No.of guests</option>
-												<option value="">1</option>
-												<option value="">2 </option>         
-												<option value="">3</option>
-												<option value="">4 </option>
-												<option value="">5 </option>
-												<option value="">6 </option>
-											</select>
+											<input autocomplete="off" type="text" name="number_of_guests" placeholder="No. of guests" required="">
 										</div>	
 									</div>
 									<div class="span1_of_1 phone_email1">
 										<!-- start_section_room -->
 										<div class="section_room">
 											<i class="fa fa-h-square" aria-hidden="true"></i>
-											<select id="country1" onchange="change_country(this.value)" class="frm-field required">
-												<option value="">Room Type</option>
-												<option value="">Family Room</option>
-												<option value="">Luxury Room</option>
-												<option value="">Double Room </option>         
-												<option value="">Suite Room</option>
-												<option value="">Superior Double Room</option>
-												<option value="">Classic Double Room</option>
-												
-							
-											</select>
+											<input autocomplete="off" type="text" name="room_type" placeholder="Room Type" required="">
 										</div>	
 									</div>
 									<div class="clear"></div>
@@ -107,13 +93,18 @@
 									<div class="phone_email">
 									<div class="form-text">
 										<i class="fa fa-user" aria-hidden="true"></i>
-										<input type="text" name="hotel name" placeholder="Hotel name" required="">
+										<input autocomplete="off" type="text" name="hotel_name" placeholder="Hotel name" required="">
 									</div> 
 								</div>
 
 								</div> 
 								<input type="submit" value="Book Now">
 								<div class="clear"></div>
+								<div style = "color:white; text-align: center;">
+								{% for message in messages %}
+									<h3> {{message}}</h3>
+								{% endfor %} 
+								</div>
 							</form>
 						</div>
 

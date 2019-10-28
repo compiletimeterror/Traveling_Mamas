@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Airline Booking Form</title>
+	<!-- Meta tags -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Airline Booking Form Responsive Widget"/>
+	<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- //Meta tags -->
+	<!-- Stylesheet -->
+	<link href="{% static 'css/wickedpicker_booking_flight.css' %}" rel="stylesheet" type='text/css' media="all" />
+	<link rel="stylesheet" href="{% static 'css/jquery-ui_booking_flight.css' %}" />
+	<link href="{% static 'css/style_booking_flight.css' %}" rel='stylesheet' type='text/css' />
+	<!-- //Stylesheet -->
+	<!--fonts-->
+	<link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Raleway:300,400,500,600,700" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Megrim" rel="stylesheet">
+	<!--//fonts-->
+</head>
+
+<body>
+	<!--background-->
+	<h1>FLIGHT Booking Form </h1>
+	<div class="booking-form-w3layouts">
+		<!-- Form starts here -->
+		<form action="booking_flight" method="post">
+		{% csrf_token %}
+			<h2 class="sub-heading-agileits">Booking Details</h2>
+			<div class="main-flex-w3ls-sectns">
+				
+				<div class="field-agileinfo-spc form-w3-agile-text1">
+					<input type="text" name="source_city" placeholder="From" required="">
+				</div>
+				<div class="field-agileinfo-spc form-w3-agile-text2">
+					<input type="text" name="destination_city" placeholder="To" required="">
+				</div>
+			</div>
+			<div class="main-flex-w3ls-sectns">
+				<div class="field-agileinfo-spc form-w3-agile-text1">
+				<div class="field-agileinfo-spc form-w3-agile-text2">
+					<input type="text" name="airline" placeholder="Preferred Airline" required="">
+				</div>
+				</div>
+				<div class="field-agileinfo-spc form-w3-agile-text2">
+					<div class="field-agileinfo-spc form-w3-agile-text2">
+					<input type="text" name="seating" placeholder="Preferred Seating" required="">
+				</div>
+				</div>
+			</div>
+			<div class="main-flex-w3ls-sectns">
+				<div class="field-agileinfo-spc form-w3-agile-text1">
+					<input id="datepicker" name="date" type="text" placeholder="Departure Date" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
+					    required="">
+				</div>
+				{% comment %} <div class="field-agileinfo-spc form-w3-agile-text2">
+					<input type="text" id="timepicker" name="Time" class="timepicker form-control" placeholder="Departure Time" value="">
+				</div> {% endcomment %}
+			</div>
+
+			<div class="triple-wthree">
+				<div class="field-agileinfo-spc form-w3-agile-text2">
+					<input type="text" name="adult_count" placeholder="Adults(12+ Yrs)" required="">
+				</div>
+				<div class="field-agileinfo-spc form-w3-agile-text2">
+					<input type="text" name="child_count" placeholder="Child(0-11 Yrs)" required="">
+				</div>
+				
+			</div>
+			
+			<h3 class="sub-heading-agileits">Personal Details</h3>
+			<div class="main-flex-w3ls-sectns">
+				<div class="field-agileinfo-spc form-w3-agile-text1">
+					<input type="text" name="name" placeholder="Full Name" required="">
+				</div>
+				<div class="field-agileinfo-spc form-w3-agile-text2">
+					<input type="text" name="mobile_number" placeholder="Phone Number" required="">
+				</div>
+			</div>
+			<div class="field-agileinfo-spc form-w3-agile-text">
+				<input type="email" name="email" placeholder="Email" required="">
+			</div>
+			<div class="clear"></div>
+			<input type="submit" value="Submit">
+			<input type="reset" value="Clear Form">
+			<div class="clear"></div>
+			<div style = "color:white; text-align: center;">
+				{% for message in messages %}
+					<h3> {{message}}</h3>
+				{% endfor %}
+			</div>
+		</form>
+		<!--// Form starts here -->
+	</div>
+	
+	<script type="text/javascript" src="{% static 'js/jquery-2.2.3.min_booking_flight.js' %}"></script>
+	<!-- Time Js -->
+	<script type="text/javascript" src="{% static 'js/wickedpicker.js_booking_flight' %}"></script>
+	<script type="text/javascript">
+		$('.timepicker,.timepicker1').wickedpicker({
+			twentyFour: false
+		});
+	</script>
+	<!--// Time Js -->
+	<!-- Calendar Js -->
+	<script src="{% static 'js/jquery-ui_booking_flight.js' %}"></script>
+	<script>
+		$(function () {
+			$("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
+		});
+	</script>
+	<!-- //Calendar Js -->
+
+</body>
+
+</html>

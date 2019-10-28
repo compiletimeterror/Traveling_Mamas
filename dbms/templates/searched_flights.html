@@ -36,7 +36,7 @@
 	<!-- Flexslider  -->
     <link rel="stylesheet" href="{% static 'css/flexslider.css' %}">
     
-    <link rel="stylesheet" type="text/css" href="{% static 'css/flight.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/searched_flights.css' %}">
 
 	<!-- Owl Carousel -->
 	<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
@@ -57,7 +57,213 @@
 	{% comment %} <[if lt IE 9]> {% endcomment %}
 	<script src="{% static 'js/respond.min.js' %}"></script>
 	{% comment %} <[endif]> {% endcomment %}
+<style>
+    *{
+    margin: 0px;
+    padding: 0px;
+   }
+   body{
+    font-family: arial;
+   }
+   .main{
+   
+    margin: 2%;
+   }
+   
+  
 
+   
+   h1{
+     font-size: 20px;
+    }
+   
+   
+   
+   button{
+     background-color: white;
+     border: 1px solid black;
+     border-radius: 5px;
+     padding:10px;
+     width: 13%;
+     height: 20%;
+     margin-left: 85%;
+     margin-right: 20%;
+     margin-top: -100%;
+     {% comment %} margin-bottom: -500%;  {% endcomment %}
+     transition-duration: 0.4s;
+     cursor: pointer;
+   }
+   button:hover{
+     background-color: black;
+     color: white;
+     transition: .5s;
+     cursor: pointer;
+   }
+
+
+
+
+    #nd-box {
+    float: right;
+    width:929px; 
+    height:345px; 
+    background-color:cornsilk; 
+    padding-top:20px; 
+    padding-left:15px; 
+    padding-right:15px; 
+    object-fit: cover;
+    border:solid black; 
+    margin-top: -17%;
+    margin-right: -1.5%;
+    margin-left: 11%;
+    
+}  
+
+
+   .container_n{ 
+    width:1330px; 
+    height:345px; 
+    background-color:cornsilk; 
+    padding-top:20px; 
+    padding-left:15px; 
+    padding-right:15px; 
+    object-fit: cover;
+    border:solid black; 
+} 
+
+.card{
+  display:block;
+  box-shadow: 1px 1px 10px black;
+  border-radius: 5px; 
+  margin: -50%;
+  margin-top: -8%;
+  margin-left: -5%;
+  margin-right: -7%;
+  margin-bottom: 10%; 
+  
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  width: 400px;
+  padding: 10px -100px; 
+  height: 300px;  
+  object-fit: cover;
+ }
+
+ .image img{
+  width: 10%;
+  height: -50%;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 20px -100px;
+  object-fit: cover;
+  margin-bottom: -10%;
+  
+ }
+
+    /* #st-box { 
+    float:left; 
+    width:180px; 
+    height:160px; 
+    background-color:white; 
+    border:solid black; 
+} */
+
+
+
+
+.des{
+  padding: 3px;
+  text-align:left;
+  display: block;
+  list-style: none;
+  outline: none;
+  /* padding: 32px 16px; */
+  font-size: 24px;
+ 
+ padding-top: 20px;
+ border-bottom-right-radius: 5px;
+ border-bottom-left-radius: 5px;
+ pointer-events: none;
+}
+
+.title{
+    
+  text-align: center;
+  padding: 10px;
+  float: right; 
+  
+ }
+ /*   #rd-box { 
+    float:right; 
+    width:180px; 
+    height:160px; 
+    background-color:white; 
+    border:solid black; 
+}  */
+    /* h1 { 
+    color:Green; 
+}  */
+
+
+
+
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: cornsilk;
+  color: white;
+  transform: rotateY(180deg);
+  height: 300px;
+  width: 300px;
+  margin: -9%;
+  margin-top: -7%;
+}
+
+z.noclick{
+  pointer-events: none;
+}
+
+</style>
 	</head>
 	<body>
 		
@@ -76,19 +282,8 @@
 								<li class="active"><a href="home">Home</a></li>
 								<li class="has-dropdown">
 
-									{% comment %} <a href="tours">Tours</a>
-									<ul class="dropdown">
-										<li><a href="#">Destination</a></li>
-										<li><a href="#">Cruises</a></li>
-										<li><a href="#">Hotels</a></li>
-										<li><a href="#">Booking</a></li>
-									</ul>
-								</li> {% endcomment %}
-								{% comment %} <li><a href="hotel_booking">Hotel Booking</a></li> {% endcomment %}
-								<!-- <li><a href="hotel_booking">Hotel Booking</a></li> -->
-
 								<li><a href="tours">Destination</a></li>
-								<li><a href="flights">Flights</a></li>
+								<li><a href="flight_search">Flights</a></li>
 								<li><a href="hotels">Hotels</a></li>
 								<li><a href="services">Services</a></li>
 								<li><a href="blog">Blog</a></li>
@@ -173,160 +368,175 @@
            
            
            
-            <h2 style =  "text-align:center;"><b><i>Availabe Flights</i></b> </h2>
+            
         </p>
-        
-        <hr size="50">
+            
+            {% if value %}
+               
+                    <hr size="50">
+                    <h2 style =  "text-align:center;"><b><i>Availabe Flights for Current Journey</i></b> </h2>
+                    <hr size="50">
+                    <h2 style =  "color:white;"><b><i>Availab </h2>
+                    {% for flight in depart %}
+                <div class="main">
+                    <div class="container_n"> 
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <div class="card">
+                                        <div class="image">
+                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg/1199px-Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg "  style= "width:400px; height:345px;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flip-card-back">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg/1199px-Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg "  style= "width:400px; height:345px;">
 
-        <div class="main">
-
-            <!--cards -->
-           
-           <div class="card">
-           
-           <div class="image">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg/1199px-Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg">
-           </div>
-           <div class="title">
-            <h1> <b>Indigo</b></h1>
-           </div>
-           <div class="des">
-            <p>
-                <li>Source</li>  <li>Destination</li>
-
-            </p>
-            <!-- <div class="wrapper">
-                <button class="button">Book</button>
-            </div> -->
-
-            <div class="center">
-                    <!-- <button ion-button default="true" outline="true" color="accent"><b>BUTTON</b></button> -->
-                    <button ion-button (click)="single(1, 0)" style=" margin-left: auto;
-                    margin-right: auto;
-                    display: block !important;"><b>BUTTON</b></button>
-            </div>
-
-           </div>
-           </div>
-
-           <div class="card">
-           
-            <div class="image">
-               <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg/1199px-Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg">
-            </div>
-            <div class="title">
-             <h1>
-            Write title Here</h1>
-            </div>
-            <div class="des">
-             <p>
-            You can Add Desccription Here...</p>
-            <button>Book</button>
-            </div>
-            </div>
-
-            <div class="card">
-           
-                <div class="image">
-                   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg/1199px-Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg">
+                                    <!-- <p>We love that guy</p> -->
+                                </div>
+                            </div>
+                        </div>
+                         <!-- <div id="st-box">  -->
+                        <div id="nd-box">
+                            <div class="des">
+                              <p>
+                                    <z class = "noclick"><b>From : {{flight.source}}</b></z>
+                                    <z class = "noclick" style = "color:cornsilk;">hasfdjfgklfhgdhkajgfsuhadfsj</z>
+                                    <z class = "noclick"><b>To : {{flight.destination}}</b></z>
+                              </p>
+                              <p>
+                                    <z class = "noclick"><b>Arrival Time : {{flight.arrival_time}}</b></z>
+                                    <z class = "noclick" style = "color: cornsilk;">hasfdjfgklfhgdhkajgfsuhadfsj</z>
+                                    <z class = "noclick"><b>Departure Time : {{flight.departure_time}}</b></z>
+                              </p>
+                              <p>
+                                    <z class = "noclick"><b>Duration : {{flight.duration}}</b></z>
+                                    <z class = "noclick" style = "color: cornsilk;">hasfdjfgklfhgdhkajgfsuhadfsj</z>
+                                    <z class = "noclick"><b>Date : {{flight.date}}</b></z>
+                              </p>
+                              <p>
+                                    <z class = "noclick"><b>Price : {{flight.price}}</b></z>
+                              </p>
+                            </div>
+                            <form action = "booking_flight">
+                            <button ><b>BOOK</b></button>
+                            </form>
+                        </div>   
+                    </div> 
                 </div>
-                <div class="title">
-                 <h1>
-                Write title Here</h1>
-                </div>
-                <div class="des">
-                 <p>
-                You can Add Desccription Here...</p>
-                <button>Book.</button>
-                </div>
-            </div>
+                <h2 style =  "color:white;"><b><i>Availab </h2>
+                    {% endfor %}
+                    {% comment %} <h2 style =  "color:white;"><b><i>Availab </h2> {% endcomment %}
+                    <h2 style =  "color:white;"><b><i>Availab </h2>
+                    <hr size="50">
+                    <h2 style =  "text-align:center;"><b><i>Availabe Flights for Return Journey</i></b> </h2>
+                    <hr size="50">
+                    <h2 style =  "color:white;"><b><i>Availab </h2>
+                    <h2 style =  "color:white;"><b><i>Availab </h2>
+                    {% for flight in return %}
+               <div class="main">
+                    <div class="container_n"> 
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <div class="card">
+                                        <div class="image">
+                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg/1199px-Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg "  style= "width:400px; height:345px;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flip-card-back">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg/1199px-Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg "  style= "width:400px; height:345px;">
 
+                                    <!-- <p>We love that guy</p> -->
+                                </div>
+                            </div>
+                        </div>
+                         <!-- <div id="st-box">  -->
+                        <div id="nd-box">
+                            <div class="des">
+                            <p>
+                                    <z class = "noclick"><b>From : {{flight.source}}</b></z>
+                                    <z class = "noclick" style = "color:cornsilk;">hasfdjfgklfhgdhkajgfsuhadfsj</z>
+                                    <z class = "noclick"><b>To : {{flight.destination}}</b></z>
+                              </p>
+                              <p>
+                                    <z class = "noclick"><b>Arrival Time : {{flight.arrival_time}}</b></z>
+                                    <z class = "noclick" style = "color: cornsilk;">hasfdjfgklfhgdhkajgfsuhadfsj</z>
+                                    <z class = "noclick"><b>Departure Time : {{flight.departure_time}}</b></z>
+                              </p>
+                              <p>
+                                    <z class = "noclick"><b>Duration : {{flight.duration}}</b></z>
+                                    <z class = "noclick" style = "color: cornsilk;">hasfdjfgklfhgdhkajgfsuhadfsj</z>
+                                    <z class = "noclick"><b>Date : {{flight.date}}</b></z>
+                              </p>
+                              <p>
+                                    <z class = "noclick"><b>Price : {{flight.price}}</b></z>
+                              </p>
+                            </div>
+                            <form action = "booking_flight">
+                            <button onclick = "windows.locaton.href = 'booking_flight'"><b>BOOK</b></button>
+                            </form>
+                        </div>   
+                    </div> 
+                </div>
+                <h2 style =  "color:white;"><b><i>Availab </h2>
+                    {% endfor %}
+               
+                
+                {% else %}
+            
+                    {% for flight in flights %}    
+                <div class="main">
+                    <div class="container_n"> 
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <div class="card">
+                                        <div class="image">
+                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg/1199px-Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg "  style= "width:400px; height:345px;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flip-card-back">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg/1199px-Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg "  style= "width:400px; height:345px;">
 
-
-            <div class="card">
-           
-                <div class="image">
-                   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg/1199px-Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg">
+                                    <!-- <p>We love that guy</p> -->
+                                </div>
+                            </div>
+                        </div>
+                         <!-- <div id="st-box">  -->
+                        <div id="nd-box">
+                            <div class="des">
+                            <p>
+                                    <z class = "noclick"><b>From : {{flight.source}}</b></z>
+                                    <z class = "noclick" style = "color:cornsilk;">hasfdjfgklfhgdhkajgfsuhadfsj</z>
+                                    <z class = "noclick"><b>To : {{flight.destination}}</b></z>
+                              </p>
+                              <p>
+                                    <z class = "noclick"><b>Arrival Time : {{flight.arrival_time}}</b></z>
+                                    <z class = "noclick" style = "color: cornsilk;">hasfdjfgklfhgdhkajgfsuhadfsj</z>
+                                    <z class = "noclick"><b>Departure Time : {{flight.departure_time}}</b></z>
+                              </p>
+                              <p>
+                                    <z class = "noclick"><b>Duration : {{flight.duration}}</b></z>
+                                    <z class = "noclick" style = "color: cornsilk;">hasfdjfgklfhgdhkajgfsuhadfsj</z>
+                                    <z class = "noclick"><b>Date : {{flight.date}}</b></z>
+                              </p>
+                              <p>
+                                    <z class = "noclick"><b>Price : {{flight.price}}</b></z>
+                              </p>
+                            </div>
+                            <form action = "booking_flight">
+                            <button ><b>BOOK</b></button>
+                            </form>
+                        </div>   
+                    </div> 
                 </div>
-                <div class="title">
-                 <h1>
-                Write title Here</h1>
-                </div>
-                <div class="des">
-                 <p>
-                You can Add Desccription Here...</p>
-                <button>Book</button>
-                </div>
-            </div>
-
-
-
-            <div class="card">
-           
-                <div class="image">
-                   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg/1199px-Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg">
-                </div>
-                <div class="title">
-                 <h1>
-                Write title Here</h1>
-                </div>
-                <div class="des">
-                 <p>
-                You can Add Desccription Here...</p>
-                <button>Book</button>
-                </div>
-            </div>
-
-
-            <div class="card">
-           
-                <div class="image">
-                   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg/1199px-Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg">
-                </div>
-                <div class="title">
-                 <h1>
-                Write title Here</h1>
-                </div>
-                <div class="des">
-                 <p>
-                You can Add Desccription Here...</p>
-                <button>Book</button>
-                </div>
-            </div>
-
-
-            <div class="card">
-           
-                <div class="image">
-                   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg/1199px-Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg">
-                </div>
-                <div class="title">
-                 <h1>
-                Write title Here</h1>
-                </div>
-                <div class="des">
-                 <p>
-                You can Add Desccription Here...</p>
-                <button>Book</button>
-                </div>
-            </div>
-
-            <div class="card">
-           
-                <div class="image">
-                   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg/1199px-Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg">
-                </div>
-                <div class="title">
-                 <h1>
-                Write title Here</h1>
-                </div>
-                <div class="des">
-                 <p>
-                You can Add Desccription Here...</p>
-                <button>Book</button>
-                </div>
-            </div>
-
+                <h2 style =  "color:white;"><b><i>Availab </h2>
+                    {% endfor %}
+            
+            {% endif %}
 
             
             <div id="colorlib-blog">
@@ -756,7 +966,7 @@
                             <h4>Book Now</h4>
                             <p>
                                 <ul class="colorlib-footer-links">
-                                    <li><a href="flights">Flight</a></li>
+                                    <li><a href="flight_search">Flight</a></li>
                                     <li><a href="hotels">Hotels</a></li>
                                     <li><a href="tours">Tour</a></li>
                                     <li><a href="hotels">Resorts</a></li>

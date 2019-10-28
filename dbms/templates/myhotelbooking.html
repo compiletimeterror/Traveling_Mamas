@@ -1,0 +1,122 @@
+{% load static %}
+<head>
+
+    <!-- Basic Page Needs
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>{% block title %}Circle{% endblock %}</title>
+
+    <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONTS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,500'
+          rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Cousine'
+          rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/myhotelbooking.css' %}">
+
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
+
+
+    <!-- JS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <script type="text/javascript"
+            src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript"
+            src="{% static 'js/autogrow.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/global.js' %}"></script>
+
+   
+
+</head>
+<body>
+<div style="background-color:white";>
+<header class="circle--header">
+    <div class="bounds">
+        <div class="circle--fluid">
+            <div class="circle--fluid--cell">
+                <h1 class="hide-text circle--logo"><a class="logo"
+                                                      href="home">Circle</a>
+                </h1>
+            </div>
+            <div class="circle--fluid--cell circle--fluid--primary">
+                <nav>
+                                        <ul class="circle--inline">
+    <li><a href="home">Home</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="circle--fluid--cell circle--fluid--secondary">
+                <nav>
+                    <ul class="circle--inline">
+                        {% if not user.is_authenticated %}
+                            <li><a href="register">Register</a></li>
+                            <li><a href="login">Login</a></li>
+                        {% else %}
+                            <!-- view profile link here? -->
+                            <!-- edit profile link here? -->
+                            <li><a href="myprofile">My Profile</a></li>
+                            <li><a href="logout">Log Out</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="bounds circle--page">
+{% comment %} {% if messages %} {% endcomment %}
+    <ul class="messages centered grid-50">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+        </ul>
+{% comment %} {% endif %} {% endcomment %}
+
+{% block body %}{% endblock %}
+</div>
+
+<div class="main1">
+       
+       <div class="card1">
+            <div class="image1">
+                {% comment %} <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg/1199px-Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg" style = "width:200px; height: 250px;"> {% endcomment %}
+                <li style="width:225px; height: 250px; background-image: url({% static 'images/default1.jpg' %});">
+            </div>
+       </div>
+
+       <div class="grid-75">
+            <h1 style = "color:black"><i>My Hotel Booking Summary</i></h1>
+        </div>
+        {% if object is not None %}
+            {% for user in object %}
+            <div class="rishi">
+                <div class="container_n">
+                        <p><strong>Name : {{ user.first_name }} {{user.last_name}}</strong></p>
+                        <p><strong>Hotel Name : {{ user.hotel_name }}</strong></p>
+                        <p><strong>Room Type : {{ user.room_type }}</strong></p>
+                        <p><strong>No of People : {{ user.number_of_guests }}</strong></p>
+                        <p><strong>Check In : {{ user.check_in }}</strong></p>
+                        <p><strong>Check Out : {{ user.check_out }}</strong></p>
+                        <p><strong>Total Price : {{ user.price }}</strong></p>
+                        <p><strong>Phone : {{ user.mobile_number }}</strong></p>
+                        <p><strong>Email : {{ user.email }}</strong></p>
+                </div>
+            </div> 
+            <h1 style = "color:white">fsdgknlgkln</h1>
+            {% endfor %}
+        {% else %}
+             <h1 class = "rishi" >No Hotel Booking Found!!!</h1>
+        {% endif %} 
+        </div>
+               
+</body>
+
+</html>

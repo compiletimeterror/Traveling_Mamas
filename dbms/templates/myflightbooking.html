@@ -1,0 +1,123 @@
+{% load static %}
+<head>
+
+    <!-- Basic Page Needs
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>{% block title %}Circle{% endblock %}</title>
+
+    <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONTS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,500'
+          rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Cousine'
+          rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/myflightbooking.css' %}">
+
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
+
+
+    <!-- JS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <script type="text/javascript"
+            src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript"
+            src="{% static 'js/autogrow.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/global.js' %}"></script>
+
+   
+
+</head>
+<body>
+<div style="background-color:white";>
+<header class="circle--header">
+    <div class="bounds">
+        <div class="circle--fluid">
+            <div class="circle--fluid--cell">
+                <h1 class="hide-text circle--logo"><a class="logo"
+                                                      href="user">Circle</a>
+                </h1>
+            </div>
+            <div class="circle--fluid--cell circle--fluid--primary">
+                <nav>
+                                        <ul class="circle--inline">
+    <li><a href="home">Home</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="circle--fluid--cell circle--fluid--secondary">
+                <nav>
+                    <ul class="circle--inline">
+                        {% if not user.is_authenticated %}
+                            <li><a href="register">Register</a></li>
+                            <li><a href="login">Login</a></li>
+                        {% else %}
+                            <!-- view profile link here? -->
+                            <!-- edit profile link here? -->
+                            <li><a href="myprofile">My Profile</a></li>
+                            <li><a href="logout">Log Out</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="bounds circle--page">
+{% comment %} {% if messages %} {% endcomment %}
+    <ul class="messages centered grid-50">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+        </ul>
+{% comment %} {% endif %} {% endcomment %}
+
+{% block body %}{% endblock %}
+</div>
+
+<div class="main1">
+       
+       <div class="card1">
+            <div class="image1">
+                {% comment %} <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg/1199px-Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg" style = "width:200px; height: 250px;"> {% endcomment %}
+                <li style="width:225px; height: 250px; background-image: url({% static 'images/default1.jpg' %});">
+            </div>
+       </div>
+
+       <div class="grid-75">
+            <h1 style = "color:black;"><i>My Flight Booking Summary</i></h1>
+        </div>
+
+     {% if object is not None %}        
+        {% for user in object%}
+            <div class="rishi">
+                <div class="container_n">
+                    
+                        <p><strong>Name : {{ user.fullname }}</strong></p>
+                        <p><strong>Airline : {{ user.airline}}</strong></p>
+                        <p><strong>Source City : {{ user.source_city }}</strong></p>
+                        <p><strong>Destination City : {{ user.destination_city }}</strong></p>
+                        <p><strong>Departure Date : {{ user.departure_date }}</strong></p>
+                        <p><strong>No. of Adult Seats : {{ user.adult_count }}</strong></p>
+                        <p><strong>No. of Child Seats : {{ user.child_count}}</strong></p>
+                        <p><strong>Seat type : {{ user.seat_type}}</strong></p>
+                        <p><strong>Phone : {{ user.mobile_number}}</strong></p>
+                        <p><strong>Email : {{ user.email}}</strong></p>
+                
+                </div>
+            </div> 
+            {% endfor %}
+        {% else %}
+            <h1 class = "rishi" >No Flight Booking Found!!!</h1> 
+        {% endif %}
+</body>
+                
+</html>

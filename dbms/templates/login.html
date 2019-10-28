@@ -28,6 +28,7 @@
 	<link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext"
 	 rel="stylesheet">
 	<!-- //web-fonts -->
+
 </head>
 
 <body>
@@ -42,8 +43,11 @@
 			<!-- vertical tabs -->
 			<div class="vertical-tab">
 				<div id="section1" class="section-w3ls">
+				
 					<input type="radio" name="sections" id="option1" checked>
-					<label for="option1" class="icon-left-w3pvt"><span class="fa fa-user-circle" aria-hidden="true"></span>Login</label>
+					
+					<label for="option1" class="icon-left-w3pvt"><span class="fa fa-user-circle" aria-hidden="true" style = ></span>Login</label>
+					{% comment %} <b style = "position:; top:5px:left:20px;color:white;">Login</b> {% endcomment %}
 					<article>
 						<form action="login" method="post">
 						{% csrf_token %}
@@ -57,7 +61,7 @@
 								<input type="password" placeholder="Password" name="password" required />
 							</div>
 							<button type="submit" class="btn submit">Login</button>
-							<a href="#" class="bottom-text-w3ls"></a>
+							<a href="password_reset" class="bottom-text-w3ls">Forgot Password?</a>
 							<div style = "text-align: center;">
 								{% for message in messages %}
 									<h2> {{message}}</h2>
@@ -68,21 +72,7 @@
 				</div>
 				
 				
-				<div id="section3" class="section-w3ls">
-					<input type="radio" name="sections" id="option3">
-					<label for="option3" class="icon-left-w3pvt"><span class="fa fa-lock" aria-hidden="true"></span>Forgot Password?</label>
-					<article>
-						<form action="#" method="post">
-							<h3 class="legend last">Reset Password</h3>
-							<p class="para-style">Enter your email address below and we'll send you an email with instructions.</p>
-							<div class="input">
-								<span class="fa fa-envelope-o" aria-hidden="true"></span>
-								<input type="email" placeholder="Email" name="email" required />
-							</div>
-							<button type="submit" class="btn submit last-btn">Reset</button>
-						</form>
-					</article>
-				</div>
+				
 			</div>
 			<!-- //vertical tabs -->
 			<div class="clear"></div>

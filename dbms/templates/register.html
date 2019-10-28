@@ -1,0 +1,122 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html lang="zxx">
+<head>
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="keywords" content="Triple Forms Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- Meta tag Keywords -->
+
+	<!-- css files -->
+	<link rel="stylesheet" href="{% static 'css/style_register.css' %}" type="text/css" media="all" />
+	<!-- Style-CSS -->
+	<link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+	<!-- Font-Awesome-Icons-CSS -->
+	<!-- //css files -->
+
+	<!-- web-fonts -->
+	<link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext"
+	 rel="stylesheet">
+	<!-- //web-fonts -->
+<style>
+a:link {
+  color: blue;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: pink;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+</style>
+</head>
+
+<body>
+	<div class="main-bg">
+		<!-- title -->
+		<h1>Register Here</h1>
+		<!-- //title -->
+		<div class="sub-main-w3">
+			<div class="image-style">
+
+			</div>
+			<!-- vertical tabs -->
+			<div class="vertical-tab">
+
+				<div id="section2" class="section-w3ls">
+					<input type="radio" name="sections" id="option2" checked >
+					<label for="option1" class="icon-left-w3pvt"><span class="fa fa-pencil-square" aria-hidden="true" style = ></span>Register</label>
+
+					<article>
+						<form action="register" method="post" >
+							{% csrf_token %}
+							<h3 class="legend"></h3>
+							<div class="input" style="float:left">
+								<span class="fa fa-user-o" aria-hidden="true"></span>
+								<input type="text" placeholder="First Name" name="first_name" required />
+							 </div>
+							<div class="input">
+								<span class="fa fa-user-o" aria-hidden="true"></span>
+								<input type="text" placeholder="Last Name" name="last_name" required />
+							</div>
+							<div class="input">
+								<span class="fa fa-user-o" aria-hidden="true"></span>
+								<input type="text" placeholder="Username" name="user_name" required />
+							</div>
+							<div class="input">
+								<span class="fa fa-envelope-o" aria-hidden="true"></span>
+								<input type="email" placeholder="Email" name="email" required />
+							</div>
+							<div class="input" style="float:left">
+								<span class="fa fa-key" aria-hidden="true"></span>
+								<input type="password" placeholder="Password" name="password1" required />
+							</div>
+							<div class="input">
+								<span class="fa fa-key" aria-hidden="true"></span>
+								<input type="password" placeholder="Confirm Password" name="password2" required />
+							</div>
+							<button type="submit" class="btn submit">Register</button>
+							<a href="login" class="bottom-text-w3ls" ><strong>Login</strong></a>   <!--target="_blank"-->
+							<div style = "text-align: center;">
+								{% for message in messages %}
+									<h2> {{message}}</h2>
+								{% endfor %}
+							</div>
+						</form>
+						
+					</article>
+				</div>
+				
+			</div>
+			
+			<!-- //vertical tabs -->
+			<div class="clear"></div>
+			
+		</div>
+		
+	</div>
+	
+</body>
+
+</html>

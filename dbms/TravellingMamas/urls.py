@@ -1,16 +1,18 @@
 from django.urls import path
+from django.contrib.auth.views import PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
 from . import views
 
 urlpatterns = [
     path('', views.home, name = 'home'),
+    path('flight_search', views.flight_search, name = 'flight_search'),
+    path('booking_flight', views.booking_flight, name = 'booking_flight'),
     path('home', views.home, name = 'home'),
     path('about', views.about, name = 'about'),
     path('blog', views.blog, name = 'blog'),
     path('contact', views.contact, name = 'contact'),
     path('hotel-room', views.hotel_room, name = 'hotel-room'),
-    path('hotels', views.hotel, name = 'hotel'),
+    path('hotels', views.hotels, name = 'hotel'),
     path('services', views.service, name = 'services'),
-    # path('tour-place', views.tour_place, name = 'tour-place'),
     path('tours', views.tour, name = 'tours'),
     path('srinagar', views.srinagar, name = 'srinagar'),
     path('shimla', views.shimla, name = 'shimla'),
@@ -31,5 +33,14 @@ urlpatterns = [
     path('three', views.three, name = 'three'),
     path('two', views.two, name = 'two'),
     path('hotel_booking', views.hotel_booking, name = 'hotel_booking'),
-    path('flight', views.flight, name = 'flight')
+    path('login', views.login, name = 'login'),
+    path('register', views.register, name = 'register'),
+    path('logout', views.logout, name = 'logout'),
+    path('password_reset', PasswordResetView.as_view(template_name = 'password_reset.html'), name = 'password_reset'),
+    path('password_reset/done', PasswordResetDoneView.as_view(), name = 'password_reset_done'),
+    path('password_reset/confirm/<uidb64>/<token>/', PasswordResetConfirmView.as_view(), name = 'password_reset_confirm'),
+    path('password_reset/complete/', PasswordResetCompleteView.as_view(), name = 'password_reset_complete'),
+    path('myprofile', views.myprofile, name = 'myprofile'),
+    path('myflightbooking', views.myflightbooking, name = "myflightbooking"),
+    path('myhotelbooking', views.myhotelbooking, name = "myhotelbooking")
 ]

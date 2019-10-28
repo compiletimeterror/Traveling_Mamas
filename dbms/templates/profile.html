@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="grid-25">
+    {% comment %} {% if user.profile.avatar %} {% endcomment %}
+    <img class="circle--primary--avatar .button" src="https://github.com/kampaitees/Travelling-Mamas/blob/master/dbms/media/alleppey1.jpg">
+    {% comment %} {% endif %} {% endcomment %}
+</div>
+
+<div class="grid-75">
+    <h1>Profile Summary for {{ user.username }}</h1>
+</div>
+
+<div class="grid-75">
+    <form method="POST" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p><td><strong>Name : {{ user.first_name }}</strong></td> <td><strong>{{ user.last_name }}</td></strong></p>
+        <p></p>
+        <p>{{ user.email }}</p>
+        <p>{{ user.dob|default_if_none:"" }}</p>
+        {% comment %} <p>{{ user.profile.bio     }}</p> {% endcomment %}
+
+        <hr> <a href="edit_profile" class="button">Edit</a>
+        <a class="button" type="submit" href="change_password">Change Password</a>
+        </hr>
+
+    </form>
+
+</div>
+
+{% endblock %}

@@ -36,34 +36,33 @@
 
 </head>
 <body>
+<div style="background-color:white";>
 <header class="circle--header">
     <div class="bounds">
         <div class="circle--fluid">
             <div class="circle--fluid--cell">
                 <h1 class="hide-text circle--logo"><a class="logo"
-                                                      href="user">Circle</a>
+                                                      href="home">Circle</a>
                 </h1>
             </div>
             <div class="circle--fluid--cell circle--fluid--primary">
                 <nav>
                                         <ul class="circle--inline">
-    <li><a href="user">Home</a></li>
+    <li><a href="home">Home</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="circle--fluid--cell circle--fluid--secondary">
                 <nav>
                     <ul class="circle--inline">
-                        {% comment %} {% if not user.is_authenticated %} {% endcomment %}
-                            <li><a href="sign_up">Sign Up</a></li>
-                            <li><a href="sign_in">Sign
-                                In</a></li>
-                        {% comment %} {% else %} {% endcomment %}
-                            <!-- view profile link here? -->
-                            <!-- edit profile link here? -->
-                            <li><a href="profile">Profile</a></li>
-                            <li><a href="sign_out">Sign Out</a></li>
-                        {% comment %} {% endif %} {% endcomment %}
+                        {% if not user.is_authenticated %}
+                             <li><a href="myprofile">My Profile</a></li>
+                            <li><a href="logout">Log Out</a></li>
+                        {% else %}
+                            <li><a href="register">Register</a></li>
+                            <li><a href="login">Login</a></li>
+                           
+                        {% endif %}
                     </ul>
                 </nav>
             </div>
@@ -87,30 +86,29 @@
        
        <div class="card1">
             <div class="image1">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg/1199px-Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg" style = "width:350px; height: 320px;">
+                {% comment %} <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg/1199px-Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg" style = "width:200px; height: 250px;"> {% endcomment %}
+                <li style="width:225px; height: 250px; background-image: url({% static 'images/default1.jpg' %});">
             </div>
        </div>
 
        <div class="grid-75">
-            <h1>Profile Summary for rahul</h1>
+            <h1 style = "color:black;"><i>User Profile Summary</i></h1>
         </div>
+       
+            <div class="rishi">
+                
+                        <p style = "color:black;"><strong>Username : {{ username }}</strong></p>
+                        <p style = "color:black;"><strong>Name : {{ user.first_name }} {{ user.last_name }}</strong></p>
+                        <p style = "color:black;"><strong>Email : {{ user.email }}</strong></p>
+                        <p style = "color:black;"><strong>Phone : {{ user.mobile_number }}</strong></p>
+                    
+                    <hr style = "color:black;">
+                    <a href="myflightbooking" class="button" style = "color:black;">My Flight Booking</a>
+                    <a class="button" type="submit" href="myhotelbooking" style = "color:black;">My Hotel Booking</a>
+                    </hr>
+            </div>
         
-        <div class="rishi">
-            <form method="POST" action="" enctype="multipart/form-data">
-                {% csrf_token %}
-                <hi>hfaa</hi>
-                <p><td><strong>Name : {{ user.first_name }}</strong></td> <td><strong>{{ user.last_name }}</td></strong></p>
-                <p></p>
-                <p>{{ user.email }}</p>
-                <p>{{ user.dob|default_if_none:"" }}</p>
-                {% comment %} <p>{{ user.profile.bio     }}</p> {% endcomment %}
-        
-                <hr> <a href="edit_profile" class="button">Edit</a>
-                <a class="button" type="submit" href="change_password">Change Password</a>
-                </hr>
-        
-            </form>
-        
-        </div>
-</body>
+     </div>  
+     </body>
+
 </html>

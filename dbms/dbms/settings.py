@@ -77,9 +77,12 @@ WSGI_APPLICATION = 'dbms.wsgi.application'
 DATABASES = {
     
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'db_travelling_mamas',
+        'USER': 'root',
+        'PASSWORD':'Rishi$2000$%',
+        'HOST': 'localhost',
+        'PORT':3306,
     }
 }
 
@@ -125,9 +128,16 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'rishi94075@gmail.com'
+EMAIL_HOST_PASSWORD = 'sonali1234'
+
+
 
 MEDIA_URL='/media/'
-
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
