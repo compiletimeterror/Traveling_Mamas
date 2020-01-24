@@ -451,8 +451,8 @@ See deployment for notes on how to deploy the project on a live system.
    ```
 
 ## Author
-  - [Rishi Sharma](https://github.com/kampaitees)
+  - [Rahul Kumar](https://github.com/rahul0324)
 
 ## License
   
-  Apache  © [Rishi Sharma](https://github.com/kampaitees)
+  Apache  © [Rahul Kumar](https://github.com/rahul0324)
